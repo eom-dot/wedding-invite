@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>모바일 청첩장</title>
+
+  <!-- 카톡 미리보기용(배포 주소 생기면 og:url/og:image 수정) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="우리 결혼합니다" />
+  <meta property="og:description" content="2026년 00월 00일 (토) 오후 0시 00분" />
+  <meta property="og:image" content="https://YOUR_DOMAIN_OR_GITHUBPAGES/video-thumb.jpg" />
+  <meta property="og:url" content="https://YOUR_DOMAIN_OR_GITHUBPAGES/" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- 1) 인트로 영상 (끝나면 본문 표시 + 건너뛰기 버튼) -->
+  <section id="intro" class="video-section">
+    <video
+      id="introVideo"
+      class="intro-video"
+      src="./video/intro.mp4"
+      autoplay
+      muted
+      playsinline
+    ></video>
+
+    <button id="skipBtn" class="skip-btn">건너뛰기</button>
+  </section>
+
+  <!-- 2) 청첩장 본문 -->
+  <main id="content" class="content hidden">
+    <header class="card">
+      <h1 class="title">우리 결혼합니다</h1>
+      <p class="p">신랑 홍길동 · 신부 김영희</p>
+    </header>
+
+    <section class="card">
+      <h2 class="h2">일시</h2>
+      <p class="p"><strong>2026년 00월 00일 (토) 오후 0시 00분</strong></p>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">장소</h2>
+      <p class="p"><strong>OO웨딩홀 OO층 OO홀</strong></p>
+      <p class="p small">서울특별시 OO구 OO로 00</p>
+
+      <div class="btns">
+        <a class="btn" href="https://map.kakao.com/" target="_blank" rel="noopener">카카오맵</a>
+        <a class="btn" href="https://map.naver.com/" target="_blank" rel="noopener">네이버지도</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="h2">연락하기</h2>
+      <div class="btns">
+        <a class="btn outline" href="tel:010-0000-0000">신랑에게 전화</a>
+        <a class="btn outline" href="tel:010-0000-0000">신부에게 전화</a>
+      </div>
+      <p class="p small">※ 문자 버튼은 기기 설정에 따라 동작이 달라 전화 버튼은 꼭 넣는 게 안전함.</p>
+    </section>
+
+    <footer class="footer">
+      <p class="p small">마음 전해주셔서 감사합니다.</p>
+    </footer>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
