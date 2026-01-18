@@ -1,8 +1,7 @@
-alert("script loaded");
-const video = document.getElementById("introVideo");
 const intro = document.getElementById("intro");
 const content = document.getElementById("content");
 const skipBtn = document.getElementById("skipBtn");
+const video = document.getElementById("introVideo");
 
 let done = false;
 
@@ -10,22 +9,22 @@ function showContent() {
   if (done) return;
   done = true;
 
-  // 영상 멈추고, 인트로 fade-out
-  try { video.pause(); } catch(e) {}
-  intro.classList.add("fade-out");
+  // 인트로 숨기기
+  if (intro) intro.style.display = "none";
 
-  setTimeout(() => {
-    intro.style.display = "none";
+  // 본문 보이기
+  if (content) {
     content.classList.remove("hidden");
-    content.classList.add("fade-in");
-  }, 700);
+    content.style.display = "block";
+  }
 }
 
-// 영상 끝나면 자동 전환
-video.addEventListener("ended", showContent);
+// ✅ 스킵 버튼은 무조건 동작해야 함
+if (skipBtn) {
+  skipBtn.addEventListener("click", showContent);
+}
 
-// 건너뛰기 버튼
-skipBtn.addEventListener("click", showContent);
-
-showContent(); // 영상 없이 바로 본문 보이게
-
+// ✅ 영상이 있을 때만 ended 이벤트 연결
+if (video) {
+  video.addEventListener("ended", showContent);
+}
