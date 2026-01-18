@@ -1,3 +1,4 @@
+alert("script loaded");
 const video = document.getElementById("introVideo");
 const intro = document.getElementById("intro");
 const content = document.getElementById("content");
@@ -27,3 +28,4 @@ video.addEventListener("ended", showContent);
 skipBtn.addEventListener("click", showContent);
 
 showContent(); // 영상 없이 바로 본문 보이게
+
