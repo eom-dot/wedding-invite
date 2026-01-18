@@ -23,7 +23,19 @@
     ></video>
     -->
 
-    <button id="skipBtn" class="skip-btn" type="button">건너뛰기</button>
+    <button
+  class="skip-btn"
+  type="button"
+  onclick="
+    document.getElementById('intro').style.display='none';
+    const c = document.getElementById('content');
+    c.classList.remove('hidden');
+    c.style.display='block';
+  "
+>
+  건너뛰기(테스트123)
+</button>
+
   </section>
 
   <!-- 본문 -->
@@ -36,3 +48,4 @@
     <section class="card">
       <h2 class="h2">일시</h2>
       <p class="p"><strong>2026년 00월 00일 (토) 오후 0시 00분</stron
+
